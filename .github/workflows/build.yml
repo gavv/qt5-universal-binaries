@@ -1,0 +1,59 @@
+name: "build"
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Clone submodules
+        run: |
+          git submodule update --init
+
+      - name: Clone Qt modules
+        run: |
+          cd submodules/qt5
+          ./init-repository --module-subset=essential
+
+      - name: Run CMake
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+
+      - name: Build Qt
+        run: |
+          cd build
+          make
+
+      - name: Cleanup CMake dirs
+        run: |
+          cd build/qt-universal-prefix
+          rm -r src tmp
+
+      - name: Push to sdk branch
+        run: |
+          set -ex
+          qt_tag="$(cd submodules/qt5 && git describe --tags --abbrev=0)"
+          mv build/qt-universal-prefix /tmp
+          git checkout sdk
+          rm -rf *
+          mv /tmp/qt-universal-prefix/* .
+          git add -A
+          git config user.email "actions-bot@users.noreply.github.com"
+          git config user.name "actions-bot"
+          git commit -m"Update to Qt ${qt_tag}"
+          git push -f origin sdk:sdk
+          git tag -f ${qt_tag}
+          git push origin :refs/tags/${qt_tag}
+          git push origin --tags

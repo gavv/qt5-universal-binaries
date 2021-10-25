@@ -1,0 +1,6 @@
+[submodule "qt5"]
+	path = submodules/qt5
+	url = https://code.qt.io/qt/qt5.git
+[submodule "macdeployqt-universal"]
+	path = submodules/macdeployqt-universal
+	url = https://github.com/crystalidea/macdeployqt-universal.git
