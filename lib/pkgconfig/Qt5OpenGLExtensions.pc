@@ -1,0 +1,14 @@
+prefix=/Users/runner/work/qt5-universal-binaries/qt5-universal-binaries/build/qt-x86_64-prefix
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+
+Name: Qt5 OpenGLExtensions
+Description: Qt OpenGLExtensions module
+Version: 5.15.2
+Libs: -L${libdir} -lQt5OpenGLExtensions 
+Libs.private: -F/Users/runner/work/qt5-universal-binaries/qt5-universal-binaries/build/qt-x86_64-prefix/lib -framework QtGui -framework AppKit -framework Metal -framework QtCore -framework DiskArbitration -framework IOKit -framework OpenGL -framework AGL   
+Cflags: -DQT_OPENGLEXTENSIONS_LIB -I${includedir}/QtOpenGLExtensions -I${includedir}
+Requires: Qt5Core Qt5Gui
+

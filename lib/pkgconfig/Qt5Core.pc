@@ -1,0 +1,14 @@
+prefix=/Users/runner/work/qt5-universal-binaries/qt5-universal-binaries/build/qt-x86_64-prefix
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/lib/QtCore.framework/Headers
+
+host_bins=${prefix}/bin
+qt_config=shared shared qt_framework debug_and_release release debug rpath build_all c++11 c++14 c++17 c++1z concurrent dbus no-pkg-config reduce_exports release_tools stl
+
+Name: Qt5 Core
+Description: Qt Core module
+Version: 5.15.2
+Libs: -F${libdir} -framework QtCore 
+Cflags: -DQT_CORE_LIB -I${includedir} -F${libdir}
+
