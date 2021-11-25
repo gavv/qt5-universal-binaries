@@ -56,12 +56,6 @@ foreach(QT_ARCH IN LISTS QT_ARCHITECTURES)
     -skip qtserialport
     -skip qtspeech
     -skip qtvirtualkeyboard
-    -skip qtwebchannel
-    -skip qtwebengine
-    -skip qtwebglplugin
-    -skip qtwebsockets
-    -skip qtwebview
-    -skip qtxmlpatterns
     )
 
   ExternalProject_Add(qt-${QT_ARCH}
