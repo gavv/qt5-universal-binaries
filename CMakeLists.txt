@@ -26,36 +26,6 @@ foreach(QT_ARCH IN LISTS QT_ARCHITECTURES)
     -make tools
     -nomake tests
     -nomake examples
-    -skip qt3d
-    -skip qtactiveqt
-    -skip qtcanvas3d
-    -skip qtcharts
-    -skip qtconnectivity
-    -skip qtdeclarative
-    -skip qtdoc
-    -skip qtdocgallery
-    -skip qtfeedback
-    -skip qtgamepad
-    -skip qtgraphicaleffects
-    -skip qtlocation
-    -skip qtlottie
-    -skip qtmultimedia
-    -skip qtpim
-    -skip qtpurchasing
-    -skip qtqa
-    -skip qtquick3d
-    -skip qtquickcontrols
-    -skip qtquickcontrols2
-    -skip qtquicktimeline
-    -skip qtremoteobjects
-    -skip qtrepotools
-    -skip qtscript
-    -skip qtscxml
-    -skip qtsensors
-    -skip qtserialbus
-    -skip qtserialport
-    -skip qtspeech
-    -skip qtvirtualkeyboard
     )
 
   ExternalProject_Add(qt-${QT_ARCH}
