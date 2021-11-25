@@ -4,7 +4,7 @@ libdir=${prefix}/lib
 includedir=${prefix}/lib/QtCore.framework/Headers
 
 host_bins=${prefix}/bin
-qt_config=shared shared qt_framework debug_and_release release debug rpath build_all c++11 c++14 c++17 c++1z concurrent dbus no-pkg-config reduce_exports release_tools stl
+qt_config=shared shared qt_framework debug_and_release release debug rpath build_all c++11 c++14 concurrent dbus no-pkg-config reduce_exports release_tools stl
 
 Name: Qt5 Core
 Description: Qt Core module

@@ -25,8 +25,8 @@
 #define QT_FEATURE_build_all 1
 #define QT_FEATURE_c__11 1
 #define QT_FEATURE_c__14 1
-#define QT_FEATURE_c__17 1
-#define QT_FEATURE_c__1z 1
+#define QT_FEATURE_c__17 -1
+#define QT_FEATURE_c__1z -1
 #define QT_FEATURE_c__2a -1
 #define QT_FEATURE_c99 1
 #define QT_FEATURE_c11 1
